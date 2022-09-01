@@ -7,12 +7,16 @@ body {
 .login-box {
   border: black 2px solid;
   display: block;
+  position: absolute;
 
   border-radius: 3em;
 
-  width: 80vw;
+  width: 20rem;
   height: 20rem;
-  margin: calc(100% - 20rem/2 - 1em) auto;
+  margin: auto;
+
+  top: calc(50% - 20rem/2);
+  left: calc(50% - 20rem/2);
 }
 
 
@@ -89,17 +93,18 @@ body {
   .login-box {
     border-radius: 5em;
 
+    width: 30rem;
+    height: 30rem;
 
-    width: 40vw;
-    height: 40rem;
-    margin: calc(50% - 40rem - 2em) auto;
+    top: calc(50% - 30rem/2);
+    left: calc(50% - 30rem/2);
   }
 
   .password-field {
-    top: calc(40rem/2 - 40rem/4/2 - 3rem);
+    top: calc(30rem/2 - 30rem/4/2 - 3rem);
   }
 
   .login-button {
-    top: calc(40rem/2 + 40rem/4/2 - 3rem);
+    top: calc(30rem/2 + 30rem/4/2 - 3rem);
   }
 }
