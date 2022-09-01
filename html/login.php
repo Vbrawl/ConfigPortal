@@ -1,3 +1,12 @@
+<?php
+session_start();
+
+if(isset($_SESSION["LOGGED_IN"]) && $_SESSION["LOGGED_IN"] === true) {
+  header("Location: /html/panel.php");
+  exit(0);
+}
+ ?>
+
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
@@ -15,7 +24,7 @@
         <input class="password-field-input" onfocusout="label_unshow(this, document.getElementsByClassName('password-field-input-label')[0])" onfocus="label_show(document.getElementsByClassName('password-field-input-label')[0])"/>
       </div>
 
-      <div class="login-button">Login</div>
+      <div class="login-button" onclick="send_password()">Login</div>
 
 
     </div>
