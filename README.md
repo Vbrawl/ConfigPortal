@@ -10,7 +10,6 @@ some settings from a non-advanced user.
 
 Finally, we have a custom format template in order to support every config file.
 
-
 # How to run
 
 Currently we don't have any instructions...
@@ -31,3 +30,10 @@ You may need to open a testing php server ```php -S localhost:8080```
 # Configuration
 As all programs we have a config file for this one.
 It is located at ```php/config.php```
+
+# TODO
+* Make the raw editor.
+* Create different data type modifiers.
+* Create a read function (that will return an array of objects, each objects stores it's name, type and current value).
+* Create a JavaScript loader (to load the data from the api).
+* Add password encryption (so it's not easy to steal the password)
