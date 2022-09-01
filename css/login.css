@@ -1,0 +1,105 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
+
+.login-box {
+  border: black 2px solid;
+  display: block;
+
+  border-radius: 3em;
+
+  width: 80vw;
+  height: 20rem;
+  margin: calc(100% - 20rem/2 - 1em) auto;
+}
+
+
+.password-field,
+.login-button {
+  user-select: none;
+
+  display: block;
+  position: relative;
+  border-radius: .8em;
+
+  width: 70%;
+  height: 3rem;
+
+  margin: auto;
+}
+
+.password-field {
+  top: calc(20rem/2 - 20rem/4/2 - 3rem);
+}
+
+
+.password-field-input {
+  padding: 0;
+  border-radius: .8em;
+
+  height: 100%;
+  width: 100%;
+
+  outline: #e59700 solid 2px;
+  border: 0;
+}
+
+.password-field-input:focus-visible {
+  outline-color: #915f00;
+}
+
+
+.password-field-input-label {
+  position: absolute;
+  margin: 0 .8em;
+
+  color: black;
+  font-size: 18px;
+
+  transition: opacity .2s 0s linear;
+  opacity: 0;
+}
+
+.show {
+  opacity: 1;
+}
+
+
+.login-button {
+  background: #ffa500;
+
+  top: calc(20rem/2 + 20rem/4/2 - 3rem);
+
+  text-align: center;
+  line-height: 3em;
+
+  cursor: pointer;
+}
+
+.login-button:active {
+  background: #ffbb3f;
+}
+
+
+
+
+@media only screen and (min-width: 1080px) {
+  .login-box {
+    border-radius: 5em;
+
+
+    width: 40vw;
+    height: 40rem;
+    margin: calc(50% - 40rem - 2em) auto;
+  }
+
+  .password-field {
+    top: calc(40rem/2 - 40rem/4/2 - 3rem);
+  }
+
+  .login-button {
+    top: calc(40rem/2 + 40rem/4/2 - 3rem);
+  }
+}
