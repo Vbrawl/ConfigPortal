@@ -9,7 +9,7 @@ function label_unshow(inp, label) {
 }
 
 
-let password_sent = false;
+var password_sent = false;
 function send_password() {
   password = document.getElementsByClassName("password-field-input")[0].value;
 
