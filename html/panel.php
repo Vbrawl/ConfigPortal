@@ -17,5 +17,6 @@ if(!isset($_SESSION["LOGGED_IN"]) || $_SESSION["LOGGED_IN"] !== true) {
   <body>
     <div class="Logout Button" onclick="logout();">Logout</div>
     <div id="dynamic"></div>
+    <div class="Save Button" onclick="send_changes();">Save</div>
   </body>
 </html>
