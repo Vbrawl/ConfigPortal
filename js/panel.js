@@ -1,10 +1,27 @@
 const DYNAMIC_CONTAINER_ID = "dynamic";
-var edit_mode = ''
+var edit_mode = '';
 
 
-function logout() {
-  fetch("/php/login.php?action=sessionend");
+async function logout() {
+  await fetch("/php/login.php?action=sessionend");
   window.location = window.location; // refresh
+}
+
+
+
+async function get_data() {
+  resp = await fetch("/php/panel.php?action=read_config");
+  text = await resp.text();
+  return text;
+}
+
+async function send_data(config_data) {
+  await fetch("/php/panel.php?action=write_config", {
+    method: 'POST',
+    body: config_data
+  });
+
+  alert("Config Saved!");
 }
 
 
@@ -18,7 +35,9 @@ function clear_dynamic_objects() {
 }
 
 
-function add_raw_edit(data) {
+async function add_raw_edit() {
+  config_data = await get_data();
+
   clear_dynamic_objects();
 
   edit_mode = 'raw'
@@ -27,9 +46,36 @@ function add_raw_edit(data) {
 
   text_area = document.createElement("textarea");
   text_area.classList.add("raw_textfield");
-  text_area.value = data;
+  text_area.value = config_data;
   dyncon.appendChild(text_area);
 }
 
 
-window.onload = () => add_raw_edit("Hello World!");
+
+
+
+function send_changes() {
+  config_data = '';
+
+  if(edit_mode == 'raw') {
+    dyncon = document.getElementById(DYNAMIC_CONTAINER_ID);
+    config_data = dyncon.getElementsByTagName("textarea")[0].value;
+  }
+
+
+
+  send_data(config_data);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+window.onload = add_raw_edit;
