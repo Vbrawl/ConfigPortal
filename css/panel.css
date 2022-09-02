@@ -21,3 +21,19 @@
   top: calc((100vh - 80vh) / 2);
   left: calc((100vw - 80vw) / 2);
 }
+
+
+.Button {
+  width: max-content;
+  padding: .3rem;
+
+  border-radius: 3rem;
+  cursor: pointer;
+
+  background: orange;
+}
+
+.Logout {
+  float: right;
+  background: red;
+}
