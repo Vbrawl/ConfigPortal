@@ -1,3 +1,10 @@
+<?php
+session_start();
+if(!isset($_SESSION["LOGGED_IN"]) || $_SESSION["LOGGED_IN"] !== true) {
+  header("Location: /html/login.php");
+  exit(1);
+}
+ ?>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
@@ -8,6 +15,7 @@
     <script src="/js/panel.js" charset="utf-8"></script>
   </head>
   <body>
+    <div class="Logout Button" onclick="logout();">Logout</div>
     <div id="dynamic"></div>
   </body>
 </html>
