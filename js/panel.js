@@ -2,7 +2,16 @@ const DYNAMIC_CONTAINER_ID = "dynamic";
 var edit_mode = ''
 
 
+function logout() {
+  fetch("/php/login.php?action=sessionend");
+  window.location = window.location; // refresh
+}
+
+
+
 function clear_dynamic_objects() {
+  edit_mode = '';
+
   dyncon = document.getElementById(DYNAMIC_CONTAINER_ID);
   dyncon.innerHtml = "";
   dyncon.innerText = "";
