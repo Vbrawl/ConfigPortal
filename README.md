@@ -32,8 +32,5 @@ As all programs we have a config file for this one.
 It is located at ```php/config.php```
 
 # TODO
-* Make the raw editor.
 * Create different data type modifiers.
-* Create a read function (that will return an array of objects, each objects stores it's name, type and current value).
-* Create a JavaScript loader (to load the data from the api).
 * Add password encryption (so it's not easy to steal the password)
