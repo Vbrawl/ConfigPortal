@@ -2,6 +2,8 @@
 
 .raw_textfield {
   resize: none;
+  white-space: nowrap;
+
   padding: 0;
   margin: 0;
 
@@ -31,9 +33,16 @@
   cursor: pointer;
 
   background: orange;
+  user-select: none;
 }
 
 .Logout {
-  float: right;
+  float: left;
   background: red;
+}
+
+
+.Save {
+  float: right;
+  background: #4cff4c;
 }
