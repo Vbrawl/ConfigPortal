@@ -31,5 +31,12 @@ include "../php/config.php";
 
     <div id="dynamic"></div>
     <div class="Save Button" onclick="send_changes();">Save</div>
+
+
+    <div id="program-list">
+      <div class="program">
+        <div class="program-status stopped" onclick="changeStatus(this, 0)">0</div>
+      </div>
+    </div>
   </body>
 </html>

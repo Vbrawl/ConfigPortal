@@ -21,8 +21,48 @@
   height: 80vh;
 
   top: calc((100vh - 80vh) / 2);
-  left: calc((100vw - 80vw) / 2);
+  left: calc((100vw - 80vw) / 1.1);
 }
+
+#program-list {
+  position: absolute;
+  top: calc(50% - 80vh / 2);
+  left: 0;
+
+  width: 16vw;
+  border: 1px black solid;
+  height: 80vh;
+}
+
+.program {
+  border: 0;
+  border-bottom: 1px black solid;
+  margin: 0 5px;
+  padding: 2px 0;
+}
+
+
+.program-status {
+  width: 1.5rem;
+  height: 1.5rem;
+
+  border-radius: 33rem;
+  cursor: pointer;
+
+  user-select: none;
+}
+
+.program-status.stopped {
+  background: red;
+  color: red;
+}
+
+.program-status.started {
+  background: green;
+  color: green;
+}
+
+
 
 
 .Button {
