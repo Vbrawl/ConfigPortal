@@ -3,7 +3,7 @@
 
 $password = "test";
 
-$config_path = "config.conf"
+$config_paths = ["config.conf", "config2.conf"]
 
 
 
