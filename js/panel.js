@@ -10,7 +10,8 @@ async function logout() {
 
 
 async function get_data() {
-  resp = await fetch("/php/panel.php?action=read_config");
+  i = document.getElementById("config-selector").selectedIndex;
+  resp = await fetch("/php/panel.php?action=read_config&file="+i);
   text = await resp.text();
   return text;
 }
@@ -38,7 +39,7 @@ function clear_dynamic_objects() {
 async function add_raw_edit() {
   config_data = await get_data();
 
-  clear_dynamic_objects();
+  await clear_dynamic_objects();
 
   edit_mode = 'raw'
 
@@ -78,4 +79,8 @@ function send_changes() {
 
 
 
-window.onload = add_raw_edit;
+window.onload = () => {
+  if(document.readyState == "complete") {
+    add_raw_edit();
+  }
+}
