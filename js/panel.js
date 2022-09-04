@@ -72,7 +72,34 @@ function send_changes() {
 
 
 
+async function changeStatus(obj, i) {
+  if(obj.classList.contains("stopped")) { // start
+    await fetch("/php/panel.php?action=start_program&file=" + i); // TODO: Implement this API endpoint
+  }
+  else { // stop
+    await fetch("/php/panel.php?action=stop_program&file=" + i); // TODO: Implement this API endpoint
+  }
+}
 
+
+async function updateStatus() {
+  programs = document.getElementsByClassName("program");
+
+  for(i = 0; i < programs.length; i++) {
+    f = programs[i].getElementsByClassName("program-status")[0];
+    resp = await fetch("/php/panel.php?action=get_program_status&file=" + i.innerText); // TODO: Implement this API endpoint
+    text = await resp.text();
+
+    if(!f.classList.contains(text)) {
+      if(f.classList.contains("stopped")) {
+        f.classList.remove("stopped");
+      } else {
+        f.classList.remove("started");
+      }
+      f.classList.add(text);
+    }
+  }
+}
 
 
 
