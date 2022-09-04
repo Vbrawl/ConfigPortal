@@ -4,6 +4,8 @@ if(!isset($_SESSION["LOGGED_IN"]) || $_SESSION["LOGGED_IN"] !== true) {
   header("Location: /html/login.php");
   exit(1);
 }
+
+include "../php/config.php";
  ?>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
@@ -16,6 +18,17 @@ if(!isset($_SESSION["LOGGED_IN"]) || $_SESSION["LOGGED_IN"] !== true) {
   </head>
   <body>
     <div class="Logout Button" onclick="logout();">Logout</div>
+
+    <select id="config-selector" onchange="add_raw_edit();">
+      <?php
+
+      for($i = 0; $i < count($config_paths); $i++) {
+        echo "<option value=\"$i\">$config_paths[$i]</option>";
+      }
+
+      ?>
+    </select>
+
     <div id="dynamic"></div>
     <div class="Save Button" onclick="send_changes();">Save</div>
   </body>
