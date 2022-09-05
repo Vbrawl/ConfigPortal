@@ -32,6 +32,8 @@
   width: 16vw;
   border: 1px black solid;
   height: 80vh;
+
+  white-space: nowrap;
 }
 
 .program {
@@ -39,6 +41,7 @@
   border-bottom: 1px black solid;
   margin: 0 5px;
   padding: 2px 0;
+  height: 1.5rem;
 }
 
 
@@ -50,6 +53,9 @@
   cursor: pointer;
 
   user-select: none;
+  display: inline-block;
+
+  transform: translateY(-.2rem);
 }
 
 .program-status.stopped {
@@ -62,6 +68,14 @@
   color: green;
 }
 
+
+.program-title {
+  display: inline-block;
+  padding-left: .2rem;
+
+  height: 1.5rem;
+  line-height: 1.5rem;
+}
 
 
 
