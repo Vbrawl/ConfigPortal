@@ -34,9 +34,16 @@ include "../php/config.php";
 
 
     <div id="program-list">
-      <div class="program">
-        <div class="program-status stopped" onclick="changeStatus(this, 0)">0</div>
-      </div>
+      <?php
+
+      for($i = 0; $i < count($program_names); $i++) {
+        echo "<div class=\"program\">";
+        echo "<div class=\"program-status stopped\" onclick=\"changeStatus(this, $i)\">$i</div>";
+        echo "<div class=\"program-title\">$program_names[$i]</div>";
+        echo "</div>";
+      }
+
+      ?>
     </div>
   </body>
 </html>
