@@ -22,6 +22,27 @@ if($_SESSION["LOGGED_IN"] == true) {
   }
 
 
+  else if($_GET["action"] == "start_program") {
+    $file = (int)$_GET["file"]; // Translates to start_program_lines index
+    $line = $start_program_lines[$file];
+    // pclose(popen($line, 'r')); // UNIX
+    pclose(popen("start /B ".$line, 'w')); // Windows
+  }
+
+  else if($_GET["action"] == "stop_program") {
+    $file = (int)$_GET["file"]; // Translates to stop_program_lines
+    $line = $stop_program_lines[$file];
+    // pclose(popen($line, 'r')); // UNIX
+    pclose(popen("start /B ".$line, 'w')); // Windows
+  }
+
+  else if($_GET["action"] == "get_program_status") {
+    $file = (int)$_GET["file"]; // Translates to program_status_lines
+    $line = $program_status_lines[$file];
+    echo exec($line); // BOTH
+  }
+
+
 
 
 }
