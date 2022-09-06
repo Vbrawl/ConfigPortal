@@ -25,14 +25,14 @@ if($_SESSION["LOGGED_IN"] == true) {
   else if($_GET["action"] == "start_program") {
     $file = (int)$_GET["file"]; // Translates to start_program_lines index
     $line = $start_program_lines[$file];
-    // pclose(popen($line, 'r')); // UNIX
+    //shell_exec("nohup $line >/dev/null 2>&1 &"); // UNIX
     pclose(popen("start /B ".$line, 'w')); // Windows
   }
 
   else if($_GET["action"] == "stop_program") {
     $file = (int)$_GET["file"]; // Translates to stop_program_lines
     $line = $stop_program_lines[$file];
-    // pclose(popen($line, 'r')); // UNIX
+    //shell_exec("nohup $line >/dev/null 2>&1 &"); // UNIX
     pclose(popen("start /B ".$line, 'w')); // Windows
   }
 
